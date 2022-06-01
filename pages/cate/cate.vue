@@ -17,7 +17,7 @@
           <!-- 三级分类 -->
           <view class="cateV3">
             <view class="cateV3-item" v-for="(lv3,i3) in lv2.children" :key='i3' @click='gotoGoodsList(lv3)'>
-              <image :src="lv3.cat_icon"></image>
+              <image :src="lv3.cat_icon || defaultPic"></image>
               <text>{{lv3.cat_name}}</text>
             </view>
           </view>
@@ -36,6 +36,7 @@
         active: 0,
         cateLevel2: [],
         scrollTop:0,
+        defaultPic:'https://img3.doubanio.com/f/movie/8dd0c794499fe925ae2ae89ee30cd225750457b4/pics/movie/celebrity-default-medium.png'
       };
     },
     onLoad() {
