@@ -45,6 +45,15 @@
             }
             
         }
+        ,{
+            "path" : "subpkg/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
   "tabBar": {
     "selectedColor": "#e80000",

@@ -1,5 +1,9 @@
 <template>
   <view>
+    <!-- 搜索框 -->
+    <view class="search-box">
+      <my-search @myclick='gotoSearch'></my-search> 
+    </view>
     <!-- 轮播图 -->
     <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
       <swiper-item v-for="(item,index) in swiperList" :key="index">
@@ -87,18 +91,28 @@
         console.log(res)
       },
       navClickHandler(nav) { //点击分类第一项，跳转到分类页面
-        console.log(nav)
         if (nav.name == '分类') {
           uni.switchTab({
             url: '/pages/cate/cate'
           });
         }
+      },
+      gotoSearch(){
+        console.log('~~~')
+        uni.navigateTo({
+        	url: '/subpkg/search/search'
+        });
       }
     }
   }
 </script>
 
 <style lang="scss">
+  .search-box{
+    position:sticky;
+    top:0;
+    z-index: 999;
+  }
   swiper {
     height: 330rpx;
 

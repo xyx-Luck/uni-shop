@@ -179,8 +179,8 @@
 					value: this.searchVal
 				});
 				this.searchVal = ""
-				this.show = false
-				this.showSync = false
+				this.show = true
+				this.showSync = true
 				// #ifndef APP-PLUS
 				uni.hideKeyboard()
 				// #endif
@@ -227,7 +227,7 @@
 		flex-direction: row;
 		position: relative;
 		padding: 10px;
-		// background-color: #fff;
+		background-color: #c00000;
 	}
 
 	.uni-searchbar__box {

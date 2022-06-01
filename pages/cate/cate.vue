@@ -1,5 +1,7 @@
 <template>
   <view>
+    <!-- 搜索框 -->
+    <my-search @myclick='searchBox'></my-search>
     <view class="scroll-container">
       <!-- 左侧 -->
       <scroll-view scroll-y="true" :style="{height:wh+'px'}" class="scroll-left">
@@ -38,7 +40,7 @@
     },
     onLoad() {
       //获取手机的信息，包括品牌型号 宽度 高度vh:0
-      this.wh = uni.getSystemInfoSync().windowHeight;
+      this.wh = uni.getSystemInfoSync().windowHeight-50;
       // console.log(this.wh)
       this.getCateList()
     },
@@ -66,6 +68,11 @@
         console.log(lv3)
         uni.navigateTo({
         	url: '/subpkg/goods-list/goods-list?cid='+lv3.cat_id
+        });
+      },
+      searchBox(){
+        uni.navigateTo({
+        	url: '/subpkg/search/search'
         });
       }
     }
