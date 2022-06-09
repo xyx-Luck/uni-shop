@@ -6,6 +6,7 @@ export default {
   state: () => ({
     // 收货地址
     address: JSON.parse(uni.getStorageSync('address') || '{}'),
+    userinfo:JSON.parse(uni.getStorageSync('userinfo') || '{}')
   }),
 
   // 方法
@@ -20,6 +21,14 @@ export default {
     saveAddressToStorage(state) {
       uni.setStorageSync('address', JSON.stringify(state.address))
     },
+    updateuserinfo(state,userinfo){
+      state.userinfo=userinfo
+      this.commit('m_user/saveuserinfo')
+    },
+    //持久化存储用户信息
+    saveuserinfo(state){
+      uni.setStorageSync('userinfo',JSON.stringify(state.userinfo))
+    }
   },
 
   // 数据包装器

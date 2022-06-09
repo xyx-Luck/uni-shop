@@ -2,6 +2,7 @@
   "name": "uni-shop",
   "version": "1.0.0",
   "description": "",
+  "appid":"wx419fe88bbf0c5a0e",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
